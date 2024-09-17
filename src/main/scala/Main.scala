@@ -47,7 +47,7 @@ object Main {
     df.show()
   }
 
-  override def main(args: Array[String]): Unit = {
+  def main(args: Array[String]): Unit = {
     createDataFrameAndPutToHDFS()
     //readHDFSThenPutToHBase()
     //readHBaseThenWriteToHDFS()
