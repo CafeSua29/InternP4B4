@@ -6,6 +6,8 @@ object Main {
   val spark = SparkSession.builder()
     .appName("P4B4")
     //.config("spark.hadoop.fs.defaultFS", "hdfs://namenode:50070")
+    .config("spark.executor.memory", "4g") 
+    .config("spark.driver.memory", "4g") 
     .getOrCreate()
 
     import spark.implicits._
