@@ -42,7 +42,7 @@ object Main {
         .option("delimiter", "\t")
         .option("header", "false")
         .schema(schema)
-        .csv("adv1475687109957.dat")
+        .csv("sample text")
 
     df.show()
   }
