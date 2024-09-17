@@ -43,7 +43,7 @@ object Main {
         .option("delimiter", "\t")
         .option("header", "false")
         .schema(schema)
-        .csv("pt-v-1533869954405.dat")
+        .csv("sample text")
 
     df.show()
 
