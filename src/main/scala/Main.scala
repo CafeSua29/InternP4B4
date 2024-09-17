@@ -47,9 +47,9 @@ object Main {
 
     df.show()
 
-    df = df.repartition(200)
+    val repartitiondf = df.repartition(200)
 
-    df.write
+    repartitiondf.write
       .mode("overwrite")
       .parquet("hdfs://namenode:50070/Phan4/Bai4")
   }
