@@ -2,7 +2,7 @@ import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.functions._
 
-object Main extends App {
+object Main {
   val spark = SparkSession.builder()
     .appName("P4B4")
     .getOrCreate()
