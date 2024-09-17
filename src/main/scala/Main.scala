@@ -5,6 +5,7 @@ import org.apache.spark.sql.functions._
 object Main {
   val spark = SparkSession.builder()
     .appName("P4B4")
+    .config("spark.hadoop.fs.defaultFS", "hdfs://namenode:50070")
     .getOrCreate()
 
     import spark.implicits._
@@ -45,6 +46,10 @@ object Main {
         .csv("sample text")
 
     df.show()
+
+    df.write
+      .mode("overwrite")
+      .parquet("hdfs://namenode:50070/Phan4/Bai4")
   }
 
   def main(args: Array[String]): Unit = {
