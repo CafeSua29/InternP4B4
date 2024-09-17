@@ -5,7 +5,7 @@ import org.apache.spark.sql.functions._
 object Main {
   val spark = SparkSession.builder()
     .appName("P4B4")
-    .config("spark.hadoop.fs.defaultFS", "hdfs://namenode:50070")
+    //.config("spark.hadoop.fs.defaultFS", "hdfs://namenode:50070")
     .getOrCreate()
 
     import spark.implicits._
