@@ -52,6 +52,4 @@ object Main extends App {
     //readHDFSThenPutToHBase()
     //readHBaseThenWriteToHDFS()
   }
-
-  spark.stop()
 }
