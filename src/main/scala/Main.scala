@@ -5,6 +5,7 @@ import org.apache.spark.sql.functions._
 object Main {
   val spark = SparkSession.builder()
     .appName("P4B4")
+    .master("local[*]")
     //.config("spark.hadoop.fs.defaultFS", "hdfs://namenode:50070")
     .config("spark.executor.memory", "4g") 
     .config("spark.driver.memory", "4g") 
@@ -53,7 +54,7 @@ object Main {
 
     repartitiondf.write
       .mode("overwrite")
-      .parquet("hdfs://namenode:50070/Phan4/Bai4")
+      .parquet("/Phan4/Bai4")
   }
 
   def main(args: Array[String]): Unit = {
