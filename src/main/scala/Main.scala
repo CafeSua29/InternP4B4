@@ -4,6 +4,10 @@ import org.apache.spark.sql.functions._
 import org.apache.hadoop.hbase.TableName
 import org.apache.hadoop.hbase.client.{Get, Put}
 import org.apache.hadoop.hbase.util.Bytes
+import org.apache.hadoop.conf.Configuration
+import org.apache.hadoop.hbase.HBaseConfiguration
+import org.apache.hadoop.hbase.client.Connection
+import org.apache.hadoop.hbase.client.ConnectionFactory
 
 object Main {
   val spark = SparkSession.builder()
@@ -63,7 +67,9 @@ object Main {
     val batchPutSize = 100
 
     df.foreachPartition((rows: Iterator[Row]) => {
-      val hbaseConnection = HBaseConnectionFactory.createConnection()
+      val conf = HBaseConfiguration.create()
+      val hbaseConnection = ConnectionFactory.createConnection(conf)
+
       try {
         val table = hbaseConnection.getTable(TableName.valueOf("pageviewlog", "pageviewlog_info"))
         val puts = new util.ArrayList[Put]()
