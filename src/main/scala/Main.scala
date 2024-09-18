@@ -54,7 +54,7 @@ object Main {
 
     repartitiondf.write
       .mode("overwrite")
-      .parquet("/Phan4/Bai4")
+      .parquet("hdfs://namenode:50070/Phan4/Bai4")
   }
 
   def main(args: Array[String]): Unit = {
