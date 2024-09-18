@@ -9,6 +9,8 @@ import org.apache.hadoop.hbase.HBaseConfiguration
 import org.apache.hadoop.hbase.client.Connection
 import org.apache.hadoop.hbase.client.ConnectionFactory
 
+import java.util
+
 object Main {
   val spark = SparkSession.builder()
     .appName("P4B4")
