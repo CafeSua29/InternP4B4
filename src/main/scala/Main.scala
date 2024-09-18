@@ -2,12 +2,10 @@ import org.apache.spark.sql.{Row, SparkSession}
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.functions._
 import org.apache.hadoop.hbase.TableName
-import org.apache.hadoop.hbase.client.{Get, Put}
+import org.apache.hadoop.hbase.client.{Get, Put, Connection, ConnectionFactory, Table}
 import org.apache.hadoop.hbase.util.Bytes
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.hbase.HBaseConfiguration
-import org.apache.hadoop.hbase.client.Connection
-import org.apache.hadoop.hbase.client.ConnectionFactory
 import org.apache.hadoop.hbase.client._
 
 import java.util
