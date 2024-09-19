@@ -18,5 +18,7 @@ libraryDependencies ++= Seq(
   "org.apache.hbase" % "hbase-server" % "2.4.12",    // HBase Server
   "org.apache.hbase" % "hbase-hadoop-compat" % "2.4.12", // HBase Hadoop Compatibility Layer
   "org.apache.hbase" % "hbase-mapreduce" % "2.4.12",  // For HBase integration with Hadoop
-  "org.apache.hbase" % "hbase-hadoop2-compat" % "2.4.12"
+  "org.apache.hbase" % "hbase-hadoop2-compat" % "2.4.12",
+  //3-party
+  "com.google.guava" % "guava" % "30.1-jre" % "provided"
 )
